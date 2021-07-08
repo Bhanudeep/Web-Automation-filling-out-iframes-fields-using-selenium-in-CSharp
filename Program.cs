@@ -14,7 +14,7 @@ namespace ConsoleApp2
        static void Main(string[] args)
         {   
             IWebDriver driver = new FirefoxDriver();
-
+             //First navigate to main page and fill out form
             driver.Navigate().GoToUrl("https://app.cloudqa.io/home/AutomationPracticeForm");
             try
             {
@@ -42,7 +42,8 @@ namespace ConsoleApp2
                 oCheckBox3.Click();
 
 
-
+                //Now in the main webpage right click in iframes space and click view only this frame.
+                //Now copy that url and paste it below instead of the url i put.
                 driver.Navigate().GoToUrl("https://app.cloudqa.io/Home/IFrame");
                 driver.FindElement(By.XPath("//*[@id='fname']")).SendKeys("Bhanudeep");
                 driver.FindElement(By.XPath("//*[@id='lname'] ")).SendKeys("Simhadri");
@@ -66,7 +67,7 @@ namespace ConsoleApp2
                 IWebElement oCheckBox7 = driver.FindElement(By.XPath("//*[@id='automationtestform']/div[4]/button[1]"));
                 oCheckBox7.Click();
 
-
+                //Again go to the main page and right click in other iframe space and repeat the above procedure.
                 driver.Navigate().GoToUrl("https://app.cloudqa.io/Home/InnerNestedIFrame");
                 driver.FindElement(By.XPath("//*[@id='fname']")).SendKeys("Bhanudeep");
                 driver.FindElement(By.XPath("//*[@id='lname'] ")).SendKeys("Simhadri");
